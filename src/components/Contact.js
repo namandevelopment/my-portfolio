@@ -108,8 +108,8 @@ export const Contact = () => {
                   </div>
                   <div>
                     <span className="meta-label">LinkedIn</span>
-                    <a href="https://www.linkedin.com/in/rohit-kumar-19647a219/" target="_blank" rel="noreferrer" className="meta-val link-val">
-                      linkedin.com/in/rohit-kumar-19647a219
+                    <a href="https://www.linkedin.com/in/naman-saini11/" target="_blank" rel="noreferrer" className="meta-val link-val">
+                      linkedin.com/in/naman-saini11
                     </a>
                   </div>
                 </div>

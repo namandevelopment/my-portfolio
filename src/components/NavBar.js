@@ -93,7 +93,7 @@ export const NavBar = () => {
             <span className="navbar-text">
               <div className="social-icon">
                 <a
-                  href="https://www.linkedin.com/in/rohit-kumar-19647a219/"
+                  href="https://www.linkedin.com/in/naman-saini11/"
                   target="_blank"
                   rel="noreferrer"
                   title="LinkedIn Profile"
