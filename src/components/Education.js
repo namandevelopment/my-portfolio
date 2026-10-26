@@ -12,12 +12,12 @@ export const Education = () => {
       description: "Advanced coursework in Software Engineering, Mobile Computing, Distributed Systems, Cloud Architecture, and Data Structures & Algorithms."
     },
     {
-      degree: "Bachelor of Computer Applications (BCA)",
-      institution: "IIMT University, Meerut",
-      duration: "07/2018 – 06/2021",
+      degree: "Bachelor of Science (B.Sc.) in Mathematics",
+      institution: "MDS University, Ajmer",
+      duration: "07/2015 – 06/2018",
       score: "76.78%",
       scoreLabel: "Aggregate Score",
-      description: "Foundational computer science curriculum covering Object-Oriented Programming (OOP), Database Management Systems (DBMS), Web Technologies, and Computer Networks."
+      description: "Rigorous curriculum in Higher Mathematics, Numerical Analysis, and Statistical Methods, along with Computer Programming fundamentals in C++ and Object-Oriented Programming (OOP) concepts."
     }
   ];
 
@@ -28,7 +28,7 @@ export const Education = () => {
           <span className="section-subtitle">Academic Background</span>
           <h2 className="section-title">Education & Degrees</h2>
           <p className="section-description">
-            Strong academic foundation in computer science and software development from IIMT University.
+            Strong academic foundation in computer applications, mathematics, and software development.
           </p>
         </div>
 

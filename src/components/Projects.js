@@ -108,15 +108,7 @@ export const Projects = () => {
       url: "https://apps.apple.com/in/app/stars-tracker-app/id6742403091",
       urlLabel: "App Store Link"
     },
-    {
-      title: "Gmask",
-      subtitle: "Lifestyle & Identity Security",
-      scale: "Live on Apple App Store",
-      description: "Privacy and personal security application providing identity masking and secure communications.",
-      tags: ["React Native", "iOS", "Security", "Encryption"],
-      url: "https://apps.apple.com/in/app/gmask/id6475034759",
-      urlLabel: "App Store Link"
-    },
+
     {
       title: "Singhal Jain & Co.",
       subtitle: "Enterprise Financial Services App",

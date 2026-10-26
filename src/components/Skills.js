@@ -77,7 +77,7 @@ export const Skills = () => {
           <span className="section-subtitle">Technical Proficiency</span>
           <h2 className="section-title">Core Skills & Architecture</h2>
           <p className="section-description">
-            Comprehensive skill set honed across 4+ years of building production-grade, enterprise-scale mobile applications.
+            Comprehensive skill set honed across 3+ years of building production-grade, enterprise-scale mobile applications.
           </p>
 
           <div className="skill-filter-tabs mt-4">

@@ -79,7 +79,7 @@ export const Banner = () => {
 
             <div className="hero-meta-pills">
               <span className="meta-item">
-                <GeoAlt size={14} className="me-1 meta-icon" /> Jaipur, Rajasthan, India
+                <GeoAlt size={14} className="me-1 meta-icon" /> Ajmer, Rajasthan, India
               </span>
               <a href="mailto:naman.development@gmail.com" className="meta-item">
                 <Envelope size={14} className="me-1 meta-icon" /> naman.development@gmail.com
@@ -111,14 +111,14 @@ export const Banner = () => {
               <div className="image-backdrop-glow"></div>
               <div className="avatar-frame">
                 <img
-                  src="/images/Rohit.jpeg"
+                  src="/images/namansaini.jpeg"
                   alt="Naman Saini - React Native Developer"
                   className="hero-avatar"
                   loading="eager"
                   decoding="sync"
                 />
                 <div className="experience-badge-float">
-                  <span className="badge-number">4+</span>
+                  <span className="badge-number">3+</span>
                   <span className="badge-label">Years Exp</span>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export const Banner = () => {
         <Row className="hero-stats-row mt-5 g-3">
           <Col xs={6} md={4} lg={2} className="stat-col">
             <div className="stat-card">
-              <h3 className="stat-num">4+</h3>
+              <h3 className="stat-num">3+</h3>
               <p className="stat-title">Years Experience</p>
             </div>
           </Col>

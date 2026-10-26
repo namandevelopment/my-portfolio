@@ -74,7 +74,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <span className="meta-label">Location</span>
-                    <p className="meta-val">Jaipur, Rajasthan, India</p>
+                    <p className="meta-val">Ajmer, Rajasthan, India</p>
                   </div>
                 </div>
 
