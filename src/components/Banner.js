@@ -111,7 +111,7 @@ export const Banner = () => {
               <div className="image-backdrop-glow"></div>
               <div className="avatar-frame">
                 <img
-                  src="/images/namansaini.jpeg"
+                  src={`${process.env.PUBLIC_URL || ''}/images/namansaini.jpeg`}
                   alt="Naman Saini - React Native Developer"
                   className="hero-avatar"
                   loading="eager"
