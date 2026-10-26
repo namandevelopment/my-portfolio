@@ -10,11 +10,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const mongoURI = process.env.MONGODB_URI || "mongodb+srv://rohitcomfygen:rohitcomfygen@cluster0.t5cnc.mongodb.net/portfolio?retryWrites=true&w=majority";
+const mongoURI = process.env.MONGODB_URI;
 
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log("MongoDB Connection Error:", err.message));
+if (mongoURI) {
+  mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("MongoDB Connected"))
+    .catch(err => console.log("MongoDB Connection Error:", err.message));
+} else {
+  console.log("MongoDB URI not configured. Set MONGODB_URI in environment variables if required.");
+}
 
 app.use("/", router);
 const PORT = process.env.PORT || 5000;

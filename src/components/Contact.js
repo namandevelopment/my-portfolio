@@ -21,30 +21,47 @@ export const Contact = () => {
     });
   };
 
+  // Formspree endpoint: Replace YOUR_FORM_ID with your Formspree form ID (or set REACT_APP_FORMSPREE_ID)
+  const formspreeId = process.env.REACT_APP_FORMSPREE_ID || "YOUR_FORM_ID";
+  const formspreeUrl = `https://formspree.io/f/${formspreeId}`;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
+
     try {
-      let response = await fetch("https://portfolio-hafm.onrender.com/contact", {
+      const response = await fetch(formspreeUrl, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json;charset=utf-8",
+          "Content-Type": "application/json",
+          "Accept": "application/json"
         },
-        body: JSON.stringify(formDetails),
+        body: JSON.stringify({
+          name: `${formDetails.firstName} ${formDetails.lastName}`.trim(),
+          email: formDetails.email,
+          phone: formDetails.phone,
+          message: formDetails.message
+        }),
       });
-      let result = await response.json();
-      setFormDetails(formInitialDetails);
-      if (result.code === 200) {
+
+      if (response.ok) {
+        setFormDetails(formInitialDetails);
         setStatus({ success: true, message: 'Message sent successfully! Naman will get back to you soon.' });
         setButtonText("Sent Successfully");
       } else {
-        setStatus({ success: false, message: 'Something went wrong, please try reaching directly via email.' });
+        const errorData = await response.json().catch(() => ({}));
+        setStatus({
+          success: false,
+          message: errorData?.errors?.[0]?.message || 'Please configure Formspree ID or contact directly via email.'
+        });
         setButtonText("Try Again");
       }
     } catch (err) {
-      // Fallback for network issues
-      setStatus({ success: true, message: 'Message received! Thank you for getting in touch.' });
-      setButtonText("Sent");
+      setStatus({
+        success: false,
+        message: 'Network error. Please reach out directly to naman.development@gmail.com'
+      });
+      setButtonText("Try Again");
     }
   };
 
