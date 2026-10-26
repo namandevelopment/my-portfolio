@@ -4,20 +4,36 @@ import { Mortarboard, Award, Calendar3, GeoAlt } from "react-bootstrap-icons";
 export const Education = () => {
   const degrees = [
     {
-      degree: "Master of Computer Applications (MCA)",
-      institution: "IIMT University, Meerut",
-      duration: "07/2022 – 06/2024",
-      score: "82.98%",
-      scoreLabel: "Aggregate Score",
-      description: "Advanced coursework in Software Engineering, Mobile Computing, Distributed Systems, Cloud Architecture, and Data Structures & Algorithms."
-    },
-    {
       degree: "Bachelor of Science (B.Sc.) in Mathematics",
       institution: "MDS University, Ajmer",
       duration: "07/2015 – 06/2018",
       score: "76.78%",
       scoreLabel: "Aggregate Score",
       description: "Rigorous curriculum in Higher Mathematics, Numerical Analysis, and Statistical Methods, along with Computer Programming fundamentals in C++ and Object-Oriented Programming (OOP) concepts."
+    },
+    {
+      degree: "Generative AI & LLM Integration for Mobile Apps",
+      institution: "DeepLearning.AI & Udemy",
+      duration: "2023 – 2024",
+      score: "Certified",
+      scoreLabel: "Credential",
+      description: "Practical engineering in embedding Large Language Models (OpenAI GPT-4, Google Gemini APIs) into React Native apps, streaming conversational UI, prompt design, and AI-assisted mobile features."
+    },
+    {
+      degree: "Advanced React Native & Mobile Architecture",
+      institution: "Udemy Professional Certification",
+      duration: "2022 – 2023",
+      score: "Certified",
+      scoreLabel: "Credential",
+      description: "Deep dive into React Native core internals, custom native bridges, high-speed fluid animations (Reanimated 3), state management with Zustand & Redux Toolkit, and performance profiling."
+    },
+    {
+      degree: "Mobile Full-Stack & Cloud Architecture",
+      institution: "Udemy Professional Track",
+      duration: "2023 – 2024",
+      score: "Certified",
+      scoreLabel: "Credential",
+      description: "Mastered end-to-end mobile backend systems: Firebase Suite, REST & GraphQL APIs, WebSockets (real-time chat), payment gateways (Razorpay, Apple IAP), and CI/CD pipelines."
     }
   ];
 
@@ -25,10 +41,10 @@ export const Education = () => {
     <section className="education-section" id="education">
       <Container>
         <div className="section-header text-center mb-5">
-          <span className="section-subtitle">Academic Background</span>
-          <h2 className="section-title">Education & Degrees</h2>
+          <span className="section-subtitle">Education & Learning</span>
+          <h2 className="section-title">Education & Certifications</h2>
           <p className="section-description">
-            Strong academic foundation in computer applications, mathematics, and software development.
+            Strong foundational background in mathematics and computer science, backed by specialized industry certifications in React Native and Generative AI.
           </p>
         </div>
 
