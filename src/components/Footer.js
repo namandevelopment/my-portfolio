@@ -12,7 +12,7 @@ export const Footer = () => {
               <span className="brand-name">NAMAN SAINI</span>
             </div>
             <p className="footer-tagline mb-0">
-              Senior React Native Developer • 4+ Years of Mobile Engineering Excellence
+              React Native Developer • 3+ Years of Mobile Engineering Excellence
             </p>
           </Col>
 
@@ -44,7 +44,7 @@ export const Footer = () => {
                 <Envelope size={18} />
               </a>
               <a
-                href="tel:+919690243770"
+                href="tel:+919509531768"
                 className="footer-icon-btn"
                 title="Phone"
               >

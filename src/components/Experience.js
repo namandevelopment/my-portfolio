@@ -24,10 +24,10 @@ export const Experience = () => {
                 <div className="d-flex flex-wrap justify-content-between align-items-start mb-3">
                   <div>
                     <div className="company-tag">Comfygen Technologies • Jaipur</div>
-                    <h3 className="role-title">Senior React Native Developer</h3>
+                    <h3 className="role-title">React Native Developer</h3>
                     <div className="promotion-pill">
                       <ArrowUpRightCircle size={14} className="me-1" />
-                      <span>Promoted from React Native Developer (Apr 2022) → Senior (May 2023)</span>
+                      <span>Promoted from React Native Intern (Apr 2023) → React Native Developer (Apr 2024)</span>
                     </div>
                   </div>
                   <span className="duration-pill">05/2023 – Present</span>

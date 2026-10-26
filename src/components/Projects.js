@@ -54,21 +54,6 @@ export const Projects = () => {
       urlLabel: "View Wallet App"
     },
     {
-      title: "Make Your Jodi",
-      subtitle: "Matrimony Platform (Shaadi.com-Style)",
-      scale: "50,000+ Active Users • Android & iOS",
-      featured: true,
-      description: "Feature-rich matchmaking and matrimony application engineered for high concurrency and rich user discovery.",
-      bullets: [
-        "Architected high-performance UI using TanStack Query for server-state caching, background data re-fetching, and instant response.",
-        "Implemented in-app purchases and recurring premium membership plans via Google Play Billing and Apple In-App Purchase (IAP).",
-        "Engineered real-time chat, profile verification, and intelligent filter-based partner matchmaking."
-      ],
-      tags: ["React Native", "TanStack Query", "Google Play Billing", "Apple IAP", "State Caching", "Real-Time Chat"],
-      url: "https://play.google.com/store/apps/details?id=com.meriteye.makeyourjodi",
-      urlLabel: "View Platform"
-    },
-    {
       title: "Zat Pat",
       subtitle: "Multi-Vertical On-Demand Delivery App",
       scale: "Grocery, Restaurant & Delivery Modules",

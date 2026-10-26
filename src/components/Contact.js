@@ -55,7 +55,7 @@ export const Contact = () => {
           <span className="section-subtitle">Get In Touch</span>
           <h2 className="section-title">Let’s Build Something Great</h2>
           <p className="section-description">
-            Looking for a Senior React Native Developer to architect or scale your mobile application? Feel free to reach out.
+            Looking for a React Native Developer to architect or scale your mobile application? Feel free to reach out.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export const Contact = () => {
             <div className="contact-info-card h-100">
               <h3 className="contact-card-title">Contact Information</h3>
               <p className="contact-card-desc">
-                I’m open to senior mobile engineering roles, high-scale cross-platform consulting, and technical leadership opportunities.
+                I’m open to mobile engineering roles, high-scale cross-platform consulting, and technical leadership opportunities.
               </p>
 
               <div className="contact-meta-list">
@@ -96,8 +96,8 @@ export const Contact = () => {
                   </div>
                   <div>
                     <span className="meta-label">Phone</span>
-                    <a href="tel:+919690243770" className="meta-val link-val">
-                      +91-9690243770
+                    <a href="tel:+919509531768" className="meta-val link-val">
+                      +91-9509531768
                     </a>
                   </div>
                 </div>

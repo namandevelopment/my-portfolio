@@ -10,7 +10,7 @@ const TypewriterText = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(140);
   const toRotate = [
-    "Senior React Native Developer",
+    "React Native Developer",
     "Mobile Application Architect",
     "iOS & Android Specialist",
     "Cross-Platform Lead"
@@ -48,7 +48,7 @@ const TypewriterText = () => {
     }
   };
 
-  return <span className="wrap">{text || 'Senior React Native Developer'}</span>;
+  return <span className="wrap">{text || 'React Native Developer'}</span>;
 };
 
 export const Banner = () => {
@@ -62,7 +62,7 @@ export const Banner = () => {
           <Col xs={12} lg={7} className="hero-text-col">
             <div className="status-pill mb-3">
               <span className="status-dot"></span>
-              <span>Open to Senior Mobile & Architecture Roles</span>
+              <span>Open to Mobile & Architecture Roles</span>
             </div>
 
             <h1 className="hero-title">
@@ -74,7 +74,7 @@ export const Banner = () => {
             </h1>
 
             <p className="hero-description">
-              Senior React Native Developer with <strong>4+ years of experience</strong> architecting and shipping high-performance cross-platform mobile applications across FinTech, E-Commerce, EdTech, and IoT domains. Delivered <strong>20+ production apps</strong>, scaled live apps to <strong>50,000+ active users</strong>, and achieved <strong>35% crash reduction</strong> through Sentry profiling.
+              React Native Developer with <strong>3+ years of experience</strong> architecting and shipping high-performance cross-platform mobile applications across FinTech, E-Commerce, EdTech, and IoT domains. Delivered <strong>20+ production apps</strong>, scaled live apps to <strong>50,000+ active users</strong>, and achieved <strong>35% crash reduction</strong> through Sentry profiling.
             </p>
 
             <div className="hero-meta-pills">
@@ -84,8 +84,8 @@ export const Banner = () => {
               <a href="mailto:naman.development@gmail.com" className="meta-item">
                 <Envelope size={14} className="me-1 meta-icon" /> naman.development@gmail.com
               </a>
-              <a href="tel:+919690243770" className="meta-item">
-                <Telephone size={14} className="me-1 meta-icon" /> +91-9690243770
+              <a href="tel:+919509531768" className="meta-item">
+                <Telephone size={14} className="me-1 meta-icon" /> +91-9509531768
               </a>
             </div>
 
@@ -112,7 +112,7 @@ export const Banner = () => {
               <div className="avatar-frame">
                 <img
                   src="/images/Rohit.jpeg"
-                  alt="Naman Saini - Senior React Native Developer"
+                  alt="Naman Saini - React Native Developer"
                   className="hero-avatar"
                   loading="eager"
                   decoding="sync"
