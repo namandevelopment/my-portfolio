@@ -21,8 +21,8 @@ export const Contact = () => {
     });
   };
 
-  // Formspree endpoint: Replace YOUR_FORM_ID with your Formspree form ID (or set REACT_APP_FORMSPREE_ID)
-  const formspreeId = process.env.REACT_APP_FORMSPREE_ID || "YOUR_FORM_ID";
+  // Formspree endpoint (direct email to naman.development@gmail.com)
+  const formspreeId = process.env.REACT_APP_FORMSPREE_ID || "xoeeekyr";
   const formspreeUrl = `https://formspree.io/f/${formspreeId}`;
 
   const handleSubmit = async (e) => {
