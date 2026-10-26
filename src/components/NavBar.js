@@ -35,9 +35,9 @@ export const NavBar = () => {
       <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
         <Container>
           <Navbar.Brand href="#home" className="d-flex align-items-center">
-            <div className="brand-badge me-2">RK</div>
+            <div className="brand-badge me-2">NS</div>
             <div className="brand-text">
-              <span className="brand-name">ROHIT KUMAR</span>
+              <span className="brand-name">NAMAN SAINI</span>
               <span className="brand-subtitle">Sr. React Native Developer</span>
             </div>
           </Navbar.Brand>
@@ -101,7 +101,7 @@ export const NavBar = () => {
                   <img src={navIcon1} alt="LinkedIn" />
                 </a>
                 <a
-                  href="https://github.com/Rohit0526946"
+                  href="https://github.com/namandevelopment"
                   target="_blank"
                   rel="noreferrer"
                   title="GitHub Profile"
@@ -115,7 +115,7 @@ export const NavBar = () => {
                   href={resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  download="Rohit-Kumar-Senior-React-Native-Developer.pdf"
+                  download="Naman-Saini-Resume.pdf"
                   className="download-link"
                   title="Download / View Resume (PDF)"
                 >

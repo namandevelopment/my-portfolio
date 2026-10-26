@@ -23,7 +23,7 @@ app.listen(PORT, () => console.log(`Server Running on port ${PORT}`));
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER || "rohitkumar0526946@gmail.com",
+    user: process.env.EMAIL_USER || "naman.development@gmail.com",
     pass: process.env.EMAIL_PASS || ""
   },
 });
@@ -56,8 +56,8 @@ router.post("/contact", async (req, res) => {
 
     const mail = {
       from: `"${name}" <${email}>`,
-      to: process.env.EMAIL_USER || "rohitkumar0526946@gmail.com",
-      subject: "Contact Form Submission - Rohit Kumar's Portfolio",
+      to: process.env.EMAIL_USER || "naman.development@gmail.com",
+      subject: "Contact Form Submission - Naman Saini's Portfolio",
       html: `<div style="font-family: Arial, sans-serif; padding: 20px; line-height: 1.6;">
                <h2>New Message from Portfolio Website</h2>
                <p><strong>Name:</strong> ${name}</p>

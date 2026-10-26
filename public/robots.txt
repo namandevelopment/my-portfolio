@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap URL
-Sitemap: https://rohit0526946.github.io/Myportifilio-React-js/sitemap.xml
+Sitemap: https://namandevelopment.github.io/my-portfolio/sitemap.xml

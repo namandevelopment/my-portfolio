@@ -66,7 +66,7 @@ export const Banner = () => {
             </div>
 
             <h1 className="hero-title">
-              Hi! I'm Rohit Kumar
+              Hi! I'm Naman Saini
               <br />
               <span className="txt-rotate">
                 <TypewriterText />
@@ -79,10 +79,10 @@ export const Banner = () => {
 
             <div className="hero-meta-pills">
               <span className="meta-item">
-                <GeoAlt size={14} className="me-1 meta-icon" /> Noida, Uttar Pradesh, India
+                <GeoAlt size={14} className="me-1 meta-icon" /> Jaipur, Rajasthan, India
               </span>
-              <a href="mailto:rohitkumar0526946@gmail.com" className="meta-item">
-                <Envelope size={14} className="me-1 meta-icon" /> rohitkumar0526946@gmail.com
+              <a href="mailto:naman.development@gmail.com" className="meta-item">
+                <Envelope size={14} className="me-1 meta-icon" /> naman.development@gmail.com
               </a>
               <a href="tel:+919690243770" className="meta-item">
                 <Telephone size={14} className="me-1 meta-icon" /> +91-9690243770
@@ -97,7 +97,7 @@ export const Banner = () => {
                 href={resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                download="Rohit-Kumar-Senior-React-Native-Developer.pdf"
+                download="Naman-Saini-Resume.pdf"
                 className="btn-secondary-glass"
               >
                 <Download size={18} className="me-2" /> <span>Download Resume</span>
@@ -112,7 +112,7 @@ export const Banner = () => {
               <div className="avatar-frame">
                 <img
                   src="/images/Rohit.jpeg"
-                  alt="Rohit Kumar - Senior React Native Developer"
+                  alt="Naman Saini - Senior React Native Developer"
                   className="hero-avatar"
                   loading="eager"
                   decoding="sync"

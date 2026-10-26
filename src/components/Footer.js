@@ -8,8 +8,8 @@ export const Footer = () => {
         <Row className="align-items-center py-4 g-3">
           <Col md={6} className="text-center text-md-start">
             <div className="d-flex align-items-center justify-content-center justify-content-md-start mb-2">
-              <div className="brand-badge me-2">RK</div>
-              <span className="brand-name">ROHIT KUMAR</span>
+              <div className="brand-badge me-2">NS</div>
+              <span className="brand-name">NAMAN SAINI</span>
             </div>
             <p className="footer-tagline mb-0">
               Senior React Native Developer • 4+ Years of Mobile Engineering Excellence
@@ -28,7 +28,7 @@ export const Footer = () => {
                 <Linkedin size={18} />
               </a>
               <a
-                href="https://github.com/Rohit0526946"
+                href="https://github.com/namandevelopment"
                 target="_blank"
                 rel="noreferrer"
                 className="footer-icon-btn"
@@ -37,7 +37,7 @@ export const Footer = () => {
                 <Github size={18} />
               </a>
               <a
-                href="mailto:rohitkumar0526946@gmail.com"
+                href="mailto:naman.development@gmail.com"
                 className="footer-icon-btn"
                 title="Email"
               >
@@ -52,7 +52,7 @@ export const Footer = () => {
               </a>
             </div>
             <p className="footer-copyright mb-0">
-              © {new Date().getFullYear()} Rohit Kumar. All Rights Reserved.
+              © {new Date().getFullYear()} Naman Saini. All Rights Reserved.
             </p>
           </Col>
         </Row>

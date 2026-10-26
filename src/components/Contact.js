@@ -35,7 +35,7 @@ export const Contact = () => {
       let result = await response.json();
       setFormDetails(formInitialDetails);
       if (result.code === 200) {
-        setStatus({ success: true, message: 'Message sent successfully! Rohit will get back to you soon.' });
+        setStatus({ success: true, message: 'Message sent successfully! Naman will get back to you soon.' });
         setButtonText("Sent Successfully");
       } else {
         setStatus({ success: false, message: 'Something went wrong, please try reaching directly via email.' });
@@ -74,7 +74,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <span className="meta-label">Location</span>
-                    <p className="meta-val">Noida, Uttar Pradesh, India</p>
+                    <p className="meta-val">Jaipur, Rajasthan, India</p>
                   </div>
                 </div>
 
@@ -84,8 +84,8 @@ export const Contact = () => {
                   </div>
                   <div>
                     <span className="meta-label">Email</span>
-                    <a href="mailto:rohitkumar0526946@gmail.com" className="meta-val link-val">
-                      rohitkumar0526946@gmail.com
+                    <a href="mailto:naman.development@gmail.com" className="meta-val link-val">
+                      naman.development@gmail.com
                     </a>
                   </div>
                 </div>
@@ -120,8 +120,8 @@ export const Contact = () => {
                   </div>
                   <div>
                     <span className="meta-label">GitHub</span>
-                    <a href="https://github.com/Rohit0526946" target="_blank" rel="noreferrer" className="meta-val link-val">
-                      github.com/Rohit0526946
+                    <a href="https://github.com/namandevelopment" target="_blank" rel="noreferrer" className="meta-val link-val">
+                      github.com/namandevelopment
                     </a>
                   </div>
                 </div>
