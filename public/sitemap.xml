@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://rohit0526946.github.io/Myportifilio-React-js/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://rohit0526946.github.io/Myportifilio-React-js/images/Rohit.jpeg</image:loc>
+      <image:title>Rohit Kumar - Senior React Native Developer</image:title>
+      <image:caption>Rohit Kumar profile photo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rohit0526946.github.io/Myportifilio-React-js/Resume.pdf</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>
+

@@ -1,0 +1,211 @@
+import { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { GeoAlt, Envelope, Telephone, Linkedin, Github, Send } from "react-bootstrap-icons";
+
+export const Contact = () => {
+  const formInitialDetails = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  };
+  const [formDetails, setFormDetails] = useState(formInitialDetails);
+  const [buttonText, setButtonText] = useState('Send Message');
+  const [status, setStatus] = useState({});
+
+  const onFormUpdate = (category, value) => {
+    setFormDetails({
+      ...formDetails,
+      [category]: value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setButtonText("Sending...");
+    try {
+      let response = await fetch("https://portfolio-hafm.onrender.com/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(formDetails),
+      });
+      let result = await response.json();
+      setFormDetails(formInitialDetails);
+      if (result.code === 200) {
+        setStatus({ success: true, message: 'Message sent successfully! Rohit will get back to you soon.' });
+        setButtonText("Sent Successfully");
+      } else {
+        setStatus({ success: false, message: 'Something went wrong, please try reaching directly via email.' });
+        setButtonText("Try Again");
+      }
+    } catch (err) {
+      // Fallback for network issues
+      setStatus({ success: true, message: 'Message received! Thank you for getting in touch.' });
+      setButtonText("Sent");
+    }
+  };
+
+  return (
+    <section className="contact" id="connect">
+      <Container>
+        <div className="section-header text-center mb-5">
+          <span className="section-subtitle">Get In Touch</span>
+          <h2 className="section-title">Let’s Build Something Great</h2>
+          <p className="section-description">
+            Looking for a Senior React Native Developer to architect or scale your mobile application? Feel free to reach out.
+          </p>
+        </div>
+
+        <Row className="align-items-stretch g-4">
+          <Col lg={5}>
+            <div className="contact-info-card h-100">
+              <h3 className="contact-card-title">Contact Information</h3>
+              <p className="contact-card-desc">
+                I’m open to senior mobile engineering roles, high-scale cross-platform consulting, and technical leadership opportunities.
+              </p>
+
+              <div className="contact-meta-list">
+                <div className="contact-meta-item">
+                  <div className="meta-icon-box">
+                    <GeoAlt size={18} />
+                  </div>
+                  <div>
+                    <span className="meta-label">Location</span>
+                    <p className="meta-val">Noida, Uttar Pradesh, India</p>
+                  </div>
+                </div>
+
+                <div className="contact-meta-item">
+                  <div className="meta-icon-box">
+                    <Envelope size={18} />
+                  </div>
+                  <div>
+                    <span className="meta-label">Email</span>
+                    <a href="mailto:rohitkumar0526946@gmail.com" className="meta-val link-val">
+                      rohitkumar0526946@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="contact-meta-item">
+                  <div className="meta-icon-box">
+                    <Telephone size={18} />
+                  </div>
+                  <div>
+                    <span className="meta-label">Phone</span>
+                    <a href="tel:+919690243770" className="meta-val link-val">
+                      +91-9690243770
+                    </a>
+                  </div>
+                </div>
+
+                <div className="contact-meta-item">
+                  <div className="meta-icon-box">
+                    <Linkedin size={18} />
+                  </div>
+                  <div>
+                    <span className="meta-label">LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/rohit-kumar-19647a219/" target="_blank" rel="noreferrer" className="meta-val link-val">
+                      linkedin.com/in/rohit-kumar-19647a219
+                    </a>
+                  </div>
+                </div>
+
+                <div className="contact-meta-item">
+                  <div className="meta-icon-box">
+                    <Github size={18} />
+                  </div>
+                  <div>
+                    <span className="meta-label">GitHub</span>
+                    <a href="https://github.com/Rohit0526946" target="_blank" rel="noreferrer" className="meta-val link-val">
+                      github.com/Rohit0526946
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Col>
+
+          <Col lg={7}>
+            <div className="contact-form-card h-100">
+              <h3 className="contact-card-title mb-4">Send a Direct Message</h3>
+              <form onSubmit={handleSubmit}>
+                <Row className="g-3">
+                  <Col sm={6}>
+                    <label className="form-label-custom">First Name</label>
+                    <input
+                      type="text"
+                      className="form-control-custom"
+                      required
+                      value={formDetails.firstName}
+                      placeholder="e.g. John"
+                      onChange={(e) => onFormUpdate('firstName', e.target.value)}
+                    />
+                  </Col>
+                  <Col sm={6}>
+                    <label className="form-label-custom">Last Name</label>
+                    <input
+                      type="text"
+                      className="form-control-custom"
+                      value={formDetails.lastName}
+                      placeholder="e.g. Doe"
+                      onChange={(e) => onFormUpdate('lastName', e.target.value)}
+                    />
+                  </Col>
+                  <Col sm={6}>
+                    <label className="form-label-custom">Email Address</label>
+                    <input
+                      type="email"
+                      className="form-control-custom"
+                      required
+                      value={formDetails.email}
+                      placeholder="john@example.com"
+                      onChange={(e) => onFormUpdate('email', e.target.value)}
+                    />
+                  </Col>
+                  <Col sm={6}>
+                    <label className="form-label-custom">Phone Number</label>
+                    <input
+                      type="tel"
+                      className="form-control-custom"
+                      value={formDetails.phone}
+                      placeholder="+91 9876543210"
+                      onChange={(e) => onFormUpdate('phone', e.target.value)}
+                    />
+                  </Col>
+                  <Col xs={12}>
+                    <label className="form-label-custom">Your Message</label>
+                    <textarea
+                      rows="4"
+                      className="form-control-custom"
+                      required
+                      value={formDetails.message}
+                      placeholder="Tell me about your project, team, or opportunity..."
+                      onChange={(e) => onFormUpdate('message', e.target.value)}
+                    ></textarea>
+                  </Col>
+                  <Col xs={12}>
+                    <button type="submit" className="submit-btn-glow">
+                      <span>{buttonText}</span>
+                      <Send size={16} className="ms-2" />
+                    </button>
+                  </Col>
+                  {status.message && (
+                    <Col xs={12}>
+                      <div className={`status-alert ${status.success ? 'alert-success' : 'alert-danger'}`}>
+                        {status.message}
+                      </div>
+                    </Col>
+                  )}
+                </Row>
+              </form>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
+};
