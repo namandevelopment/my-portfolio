@@ -12,29 +12,81 @@ export const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
+    let ticking = false;
+
+    const updateScrollState = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
+
+      // Check if scrolled to bottom of the page
+      const isAtBottom =
+        window.innerHeight + Math.round(window.scrollY) >=
+        document.documentElement.scrollHeight - 60;
+
+      if (isAtBottom) {
+        setActiveLink("connect");
+        return;
+      }
+
+      if (window.scrollY < 80) {
+        setActiveLink("home");
+        return;
+      }
+
+      const sections = ["home", "experience", "projects", "skills", "education", "connect"];
+      let currentSection = "home";
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 180) {
+            currentSection = sectionId;
+          }
+        }
+      }
+
+      if (currentSection) {
+        setActiveLink(currentSection);
+      }
     };
 
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateScrollState();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    updateScrollState();
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const onUpdateActiveLink = (value) => {
-    setActiveLink(value);
+  const handleNavClick = (e, sectionId) => {
+    setActiveLink(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      e.preventDefault();
+      element.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", `#${sectionId}`);
+    }
   };
 
   const resumeUrl = `${process.env.PUBLIC_URL || ''}/Resume.pdf`;
 
   return (
     <Router>
-      <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
+      <Navbar collapseOnSelect expand="lg" className={scrolled ? "scrolled" : ""}>
         <Container>
-          <Navbar.Brand href="#home" className="d-flex align-items-center">
+          <Navbar.Brand href="#home" className="d-flex align-items-center" onClick={(e) => handleNavClick(e, 'home')}>
             <div className="brand-badge me-2">NS</div>
             <div className="brand-text">
               <span className="brand-name">NAMAN SAINI</span>
@@ -45,39 +97,49 @@ export const NavBar = () => {
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto" activeKey={activeLink}>
               <Nav.Link
                 href="#home"
-                className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'}
-                onClick={() => onUpdateActiveLink('home')}
+                eventKey="home"
+                active={activeLink === 'home'}
+                className="navbar-link"
+                onClick={(e) => handleNavClick(e, 'home')}
               >
                 Home
               </Nav.Link>
               <Nav.Link
                 href="#experience"
-                className={activeLink === 'experience' ? 'active navbar-link' : 'navbar-link'}
-                onClick={() => onUpdateActiveLink('experience')}
+                eventKey="experience"
+                active={activeLink === 'experience'}
+                className="navbar-link"
+                onClick={(e) => handleNavClick(e, 'experience')}
               >
                 Experience
               </Nav.Link>
               <Nav.Link
                 href="#projects"
-                className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'}
-                onClick={() => onUpdateActiveLink('projects')}
+                eventKey="projects"
+                active={activeLink === 'projects'}
+                className="navbar-link"
+                onClick={(e) => handleNavClick(e, 'projects')}
               >
                 Projects
               </Nav.Link>
               <Nav.Link
                 href="#skills"
-                className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'}
-                onClick={() => onUpdateActiveLink('skills')}
+                eventKey="skills"
+                active={activeLink === 'skills'}
+                className="navbar-link"
+                onClick={(e) => handleNavClick(e, 'skills')}
               >
                 Skills
               </Nav.Link>
               <Nav.Link
                 href="#education"
-                className={activeLink === 'education' ? 'active navbar-link' : 'navbar-link'}
-                onClick={() => onUpdateActiveLink('education')}
+                eventKey="education"
+                active={activeLink === 'education'}
+                className="navbar-link"
+                onClick={(e) => handleNavClick(e, 'education')}
               >
                 Education
               </Nav.Link>
@@ -125,8 +187,8 @@ export const NavBar = () => {
                   </svg>
                 </a>
               </div>
-              <HashLink to='#connect'>
-                <button className="vvd"><span>Let's Connect</span></button>
+              <HashLink to='#connect' onClick={(e) => handleNavClick(e, 'connect')}>
+                <button className={activeLink === 'connect' ? 'vvd active' : 'vvd'}><span>Let's Connect</span></button>
               </HashLink>
             </span>
           </Navbar.Collapse>

@@ -15,10 +15,10 @@ export const Projects = () => {
       description: "High-scale on-demand grocery delivery ecosystem featuring instant catalog search, dynamic cart mechanics, and real-time delivery tracking.",
       bullets: [
         "Architected with React Native & TypeScript with Socket.io-based real-time order and rider tracking.",
-        "Engineered end-to-end e-commerce flow with geo-location-based pricing, Firebase FCM push notifications, and payment gateway.",
-        "Implemented resilient network retry logic and deep linking to handle edge cases, sustaining a 99% crash-free session rate via Sentry."
+        "Engineered smooth onboarding via Google Sign-In & OTP, geo-pricing, Firebase FCM push notifications, and payment gateway.",
+        "Implemented resilient network retry logic, sustaining a 99% crash-free session rate via Sentry & Firebase Crashlytics."
       ],
-      tags: ["React Native", "TypeScript", "Socket.io", "Firebase FCM", "Sentry", "Geolocation", "Payment Gateway"],
+      tags: ["React Native", "TypeScript", "Google Sign-In", "Firebase FCM", "Crashlytics", "Sentry", "Socket.io", "Geolocation"],
       url: "https://play.google.com/store/apps/details?id=com.diarchgouser",
       urlLabel: "Production Case Study"
     },
@@ -72,6 +72,15 @@ export const Projects = () => {
 
   // Additional live client apps shipped to App Store & Play Store
   const publishedApps = [
+    {
+      title: "Live Stream & Video Calling App",
+      subtitle: "ZEGOCLOUD RTC Powered Interactive Platform",
+      scale: "Low Latency • High Concurrency",
+      description: "Interactive real-time video broadcasting and high-definition video calling application with multi-guest co-hosting, in-room messaging, and call invitation flows.",
+      tags: ["React Native", "ZEGOCLOUD", "Live Streaming", "Video Calling", "WebRTC", "Push Call Invites"],
+      url: "https://play.google.com/store/apps",
+      urlLabel: "Project Showcase"
+    },
     {
       title: "First Screen By Orkids",
       subtitle: "Educational & Assessment App",

@@ -235,25 +235,53 @@ nav.navbar.scrolled {
   font-weight: 600;
   font-size: 0.95rem;
   padding: 8px 16px !important;
-  transition: all 0.25s ease;
+  margin: 0 2px;
+  border-radius: 8px;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  display: inline-block;
 }
 
-.navbar-link:hover,
+.navbar-link:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-1px);
+}
+
 .navbar-link.active {
   color: #ffffff !important;
+  background: rgba(99, 102, 241, 0.1);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
 }
 
-.navbar-link.active::after {
+.navbar-link::after {
   content: '';
   position: absolute;
   bottom: 0px;
-  left: 16px;
-  right: 16px;
-  height: 2px;
+  left: 12px;
+  right: 12px;
+  height: 2.5px;
   background: linear-gradient(90deg, var(--primary), var(--secondary));
-  border-radius: 2px;
-  box-shadow: 0 0 10px var(--primary);
+  border-radius: 4px;
+  box-shadow: 0 0 12px var(--primary-glow), 0 0 4px var(--secondary);
+  transform: scaleX(0);
+  transform-origin: center;
+  opacity: 0;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.32s ease;
+  pointer-events: none;
+}
+
+.navbar-link.active::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.navbar-link:hover:not(.active)::after {
+  transform: scaleX(0.35);
+  opacity: 0.45;
 }
 
 .navbar-text {
@@ -278,21 +306,49 @@ nav.navbar.scrolled {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #ffffff;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.social-icon a svg,
+.footer-icon-btn svg {
+  color: #ffffff;
+  fill: currentColor;
   transition: all 0.25s ease;
 }
 
 .social-icon a img {
   width: 17px;
   height: 17px;
+  transition: all 0.25s ease;
 }
 
 .social-icon a:hover,
 .footer-icon-btn:hover {
   background: var(--primary);
   border-color: var(--primary);
+  color: #ffffff !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.social-icon a:hover svg,
+.footer-icon-btn:hover svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+.footer-icon-btn.whatsapp-btn:hover {
+  background: #25d366;
+  border-color: #25d366;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.45);
+}
+
+.footer-icon-btn.whatsapp-btn:hover svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
 }
 
 .vvd {
@@ -325,7 +381,8 @@ nav.navbar.scrolled {
   animation: shimmerSweep 0.9s ease;
 }
 
-.vvd:hover {
+.vvd:hover,
+.vvd.active {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(99, 102, 241, 0.55);
 }
@@ -1481,4 +1538,119 @@ nav.navbar.scrolled {
     width: 260px;
     height: 346px;
   }
+}
+
+/************ Ultra-Slim Modern Scrollbar ************/
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #04060a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent), var(--secondary));
+}
+
+/************ Scroll Reveal Animations (60/120fps) ************/
+.reveal-init {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/************ Spotlight Card Cursor Glow (Linear Style) ************/
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    420px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(99, 102, 241, 0.12),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/************ Floating Back To Top Button ************/
+.back-to-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(13, 21, 39, 0.85);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(99, 102, 241, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.9);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.back-to-top-btn:hover {
+  background: var(--primary);
+  border-color: var(--secondary);
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.55), 0 0 20px rgba(6, 182, 212, 0.4);
+}
+
+.back-to-top-btn:active {
+  transform: translateY(-2px) scale(0.95);
+}
+
+/************ Tactile Button & Link Active State ************/
+button:active,
+.btn-primary-glow:active,
+.btn-secondary-glass:active,
+.vvd:active,
+.footer-icon-btn:active,
+.social-icon a:active {
+  transform: scale(0.96) !important;
+  transition: transform 0.1s ease !important;
 }

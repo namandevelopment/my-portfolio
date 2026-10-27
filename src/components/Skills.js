@@ -31,9 +31,11 @@ export const Skills = () => {
     },
     {
       id: "connectivity",
-      title: "Real-Time, BLE & Cloud",
+      title: "Real-Time, Media & Cloud",
       skills: [
-        { name: "Socket.io / WebSockets", tag: "Expert", desc: "Real-time order tracking & chat pipelines" },
+        { name: "ZEGOCLOUD / Live Streaming", tag: "Expert", desc: "Interactive live streaming broadcast, host-audience roles & low-latency feeds" },
+        { name: "Video & Audio Calling", tag: "Production", desc: "1-on-1 and group video/audio calling with ZEGOCLOUD RTC SDK & call invites" },
+        { name: "Socket.io / WebSockets", tag: "Expert", desc: "Real-time order tracking & bi-directional chat pipelines" },
         { name: "BLE (Bluetooth Low Energy)", tag: "Specialized", desc: "Device discovery, characteristics, GATT, Wi-Fi sync" },
         { name: "Firebase Cloud Messaging (FCM)", tag: "Expert", desc: "High-volume push notifications & deep linking" },
         { name: "Over-The-Air (OTA) Updates", tag: "Advanced", desc: "Seamless code push & runtime hotfixes" },
@@ -49,6 +51,7 @@ export const Skills = () => {
         { name: "RevenueCat", tag: "Advanced", desc: "Cross-platform subscription management" },
         { name: "Razorpay Integration", tag: "Production", desc: "Complete checkout & payment webhook flow" },
         { name: "Web3 Crypto Wallets", tag: "Specialized", desc: "Non-custodial wallets, seed phrase, gas estimation" },
+        { name: "Google Sign-In & Social Auth", tag: "Production", desc: "OAuth 2.0, Firebase Auth, Apple Sign-In & session security" },
         { name: "Biometric Auth & Keychain", tag: "Production", desc: "Face ID, Touch ID, Keystore secure enclave" },
       ]
     },
@@ -57,6 +60,7 @@ export const Skills = () => {
       title: "Build, Release & Quality",
       skills: [
         { name: "Sentry Performance Profiling", tag: "Expert", desc: "-35% production crashes, 99% crash-free sessions" },
+        { name: "Firebase Crashlytics & Analytics", tag: "Production", desc: "Real-time crash reporting, ANR tracking & event logging" },
         { name: "Google Play Console", tag: "Production", desc: "AAB bundles, internal/closed/production tracks" },
         { name: "App Store Connect", tag: "Production", desc: "TestFlight distribution, certificates, compliance" },
         { name: "Git, GitHub & Code Reviews", tag: "Team Lead", desc: "CI/CD branching models, mentoring juniors" },
@@ -77,7 +81,7 @@ export const Skills = () => {
           <span className="section-subtitle">Technical Proficiency</span>
           <h2 className="section-title">Core Skills & Architecture</h2>
           <p className="section-description">
-            Comprehensive skill set honed across 3+ years of building production-grade, enterprise-scale mobile applications.
+            Comprehensive skill set honed across 2+ years of building production-grade, enterprise-scale mobile applications.
           </p>
 
           <div className="skill-filter-tabs mt-4">

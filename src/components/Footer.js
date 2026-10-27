@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { Linkedin, Github, Envelope, Telephone } from "react-bootstrap-icons";
+import { Linkedin, Github, Envelope, Telephone, Whatsapp } from "react-bootstrap-icons";
 
 export const Footer = () => {
   return (
@@ -12,7 +12,7 @@ export const Footer = () => {
               <span className="brand-name">NAMAN SAINI</span>
             </div>
             <p className="footer-tagline mb-0">
-              React Native Developer • 3+ Years of Mobile Engineering Excellence
+              React Native Developer • 2+ Years of Mobile Engineering Excellence
             </p>
           </Col>
 
@@ -24,6 +24,7 @@ export const Footer = () => {
                 rel="noreferrer"
                 className="footer-icon-btn"
                 title="LinkedIn"
+                aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
               </a>
@@ -33,6 +34,7 @@ export const Footer = () => {
                 rel="noreferrer"
                 className="footer-icon-btn"
                 title="GitHub"
+                aria-label="GitHub"
               >
                 <Github size={18} />
               </a>
@@ -40,6 +42,7 @@ export const Footer = () => {
                 href="mailto:naman.development@gmail.com"
                 className="footer-icon-btn"
                 title="Email"
+                aria-label="Email"
               >
                 <Envelope size={18} />
               </a>
@@ -47,8 +50,19 @@ export const Footer = () => {
                 href="tel:+919509531768"
                 className="footer-icon-btn"
                 title="Phone"
+                aria-label="Phone"
               >
                 <Telephone size={18} />
+              </a>
+              <a
+                href="https://wa.me/919509531768"
+                target="_blank"
+                rel="noreferrer"
+                className="footer-icon-btn whatsapp-btn"
+                title="WhatsApp"
+                aria-label="WhatsApp"
+              >
+                <Whatsapp size={18} />
               </a>
             </div>
             <p className="footer-copyright mb-0">

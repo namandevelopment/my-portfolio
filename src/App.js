@@ -9,6 +9,7 @@ import { Skills } from "./components/Skills";
 import { Education } from "./components/Education";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { SmoothEffects } from "./components/SmoothEffects";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Education />
       <Contact />
       <Footer />
+      <SmoothEffects />
     </div>
   );
 }

@@ -74,7 +74,7 @@ export const Banner = () => {
             </h1>
 
             <p className="hero-description">
-              React Native Developer with <strong>3+ years of experience</strong> architecting and shipping high-performance cross-platform mobile applications across FinTech, E-Commerce, EdTech, and IoT domains. Delivered <strong>20+ production apps</strong>, scaled live apps to <strong>50,000+ active users</strong>, and achieved <strong>35% crash reduction</strong> through Sentry profiling.
+              React Native Developer with <strong>2+ years of experience</strong> architecting and shipping high-performance cross-platform mobile applications across FinTech, E-Commerce, EdTech, and IoT domains. Delivered <strong>20+ production apps</strong>, scaled live apps to <strong>50,000+ active users</strong>, and achieved <strong>35% crash reduction</strong> through Sentry profiling.
             </p>
 
             <div className="hero-meta-pills">
@@ -118,7 +118,7 @@ export const Banner = () => {
                   decoding="sync"
                 />
                 <div className="experience-badge-float">
-                  <span className="badge-number">3+</span>
+                  <span className="badge-number">2+</span>
                   <span className="badge-label">Years Exp</span>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export const Banner = () => {
         <Row className="hero-stats-row mt-5 g-3">
           <Col xs={6} md={4} lg={2} className="stat-col">
             <div className="stat-card">
-              <h3 className="stat-num">3+</h3>
+              <h3 className="stat-num">2+</h3>
               <p className="stat-title">Years Experience</p>
             </div>
           </Col>
