@@ -3,52 +3,39 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle, Download, GeoAlt, Envelope, Telephone } from 'react-bootstrap-icons';
 
-// Isolated Typewriter component so state changes don't re-render the Banner or Avatar
-const TypewriterText = () => {
-  const [loopNum, setLoopNum] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState('');
-  const [delta, setDelta] = useState(140);
-  const toRotate = [
+// Smooth sliding Role Rotator with blur and gradient transition
+const RoleRotator = () => {
+  const roles = [
     "React Native Developer",
     "Mobile Application Architect",
     "iOS & Android Specialist",
+    "ZEGOCLOUD RTC & Live Streaming",
     "Cross-Platform Lead"
   ];
-  const period = 1800;
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % roles.length);
+        setIsAnimating(false);
+      }, 400);
+    }, 2800);
 
-    return () => { clearInterval(ticker); };
-  }, [text, delta]);
+    return () => clearInterval(interval);
+  }, [roles.length]);
 
-  const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
-    let updatedText = isDeleting
-      ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text.length + 1);
-
-    setText(updatedText);
-
-    if (isDeleting) {
-      setDelta(prevDelta => prevDelta / 2);
-    }
-
-    if (!isDeleting && updatedText === fullText) {
-      setIsDeleting(true);
-      setDelta(period);
-    } else if (isDeleting && updatedText === '') {
-      setIsDeleting(false);
-      setLoopNum(prev => prev + 1);
-      setDelta(350);
-    }
-  };
-
-  return <span className="wrap">{text || 'React Native Developer'}</span>;
+  return (
+    <span className="role-rotator-wrapper">
+      <span className={`role-rotator-text ${isAnimating ? "role-slide-out" : "role-slide-in"}`}>
+        {roles[currentIndex]}
+      </span>
+      <span className="role-rotator-cursor" aria-hidden="true" />
+    </span>
+  );
 };
 
 export const Banner = () => {
@@ -66,11 +53,9 @@ export const Banner = () => {
             </div>
 
             <h1 className="hero-title">
-              Hi! I'm Naman Saini
+              Hi! I'm <span className="hero-name-gradient">Naman Saini</span> <span className="wave-emoji" role="img" aria-label="Waving hand">👋</span>
               <br />
-              <span className="txt-rotate">
-                <TypewriterText />
-              </span>
+              <RoleRotator />
             </h1>
 
             <p className="hero-description">
